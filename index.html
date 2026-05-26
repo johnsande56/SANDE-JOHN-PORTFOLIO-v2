@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+  content="width=device-width,initial-scale=1.0">
+<title>SANDE JOHN|Web Developer</title>
+<link
+href="https://fonts.googleapics.com/css2?
+family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link 
+href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"> 
+ 
+ <style>
+  strong{
+    color: orangered;
+    font-size: 30px;
+  }
+  html{
+    scroll-behavior: smooth;
+
+  }
+  .card:hover{
+    transform: translateY(-8px) scale(1.02);
+  }
+*{
+  margin: o;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'poppins',sans-serif;
+  background: #0f172a;
+  color: white;
+  scroll-behavior: smooth;
+}
+/* NAVBAR*/
+nav{
+display: flex;
+justify-content: space-between;
+padding: 20px 40px;
+position: fixed;
+width: 100%;
+background: rgba(15,23,42,0.9);
+}
+nav a{
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+/*HERO*/
+.hero{
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 0 40px;
+
+}
+.hero h1{
+font-size: 50px;
+
+}
+.hero span {
+color: #22c55e;
+
+}
+.hero p{
+  margin-top: 15px;
+ color: #94a3b8;
+}
+.btn{
+margin-top: 20px;
+padding: 12px 20px;
+background: #22c55e;
+color: black;
+text-decoration: none;
+border-radius: 6px;
+width: fit-content;
+}
+/*SECTIONS*/
+section{
+padding: 80px 40px;
+max-width: 1000px;
+margin: auto;
+
+}
+h2{
+
+  margin-bottom: 20px;
+  border-left: 4px solid #22c55e;
+  padding-left: 10px;
+}
+
+/*projects*/
+.projects{
+display: grid;
+gap: 20px;
+
+
+}
+.card{
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.card:hover{
+  transition: translateY(-5px);
+  
+}
+ .tr {
+  color: #22c55e;
+}
+
+/*FOOTER*/
+
+footer{
+text-align: center;
+padding: 30px;
+color: #94a3b8;
+
+}
+.mee{
+  width: 40px;
+  height: 40px;
+  background: transparent;
+}
+.me{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<nav>
+  <div>
+    <strong>Sande john</strong>
+    <div class="mee"><img class="me" href="2.jpg" ></div>
+  </div>
+  <div>
+<a href="#About">About</a>
+<a href="#projects">Projects</a>
+<a href="#Contacts">Contacts</a>
+  </div>
+
+</nav>
+
+
+
+<div class="hero" data-aos="fade-up">
+<h1>Hello,l'm <span>sande john</span></h1>
+<p>I build clean,mordern websites  and I'm looking for experience and freelance opportunities.</p>
+<p>I also create small websites for small Businesses,students and for personal brands</p>
+<a href="#projects" class="btn">View My WORK</a>
+<a href="#Contacts"class="btn">Hire me / Work with me</a>
+</div>
+
+<section id="About" data-aos="fade-right">
+  
+<h2>About Me</h2>
+<div class="about">
+<p>
+Iam an international student in tlemcen focused on web development.
+Iam building real-wild projects and looking for internships,freelance work,and collaborations.
+</p>
+</div>
+</section>
+
+<section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="Projects">
+       
+    <div class="card" data-aos="zoom-in">
+  <h3>Student Planner</h3> 
+  <a class="tr" href="student planner.html">
+    <p>Simple web app to organize tasks and schedules</p>
+    </a>
+
+    </div>
+
+    <div class="card" data-aos="zoom-in">
+
+      <h3>Business Landing Pages </h3>
+      <a class="tr" 
+       href="projects.html">
+    <p>SmartTech solutions.Busiess web page(DEMO)</p></a>
+      <a class="tr" href="projects1.html">
+      <p>Delicious Bites.landing web page(DEMO)</p></a>
+      <a href="course demo.html" class="tr">
+        <p>Courses. Landing page</p>
+      </a>
+</div>
+<div class="card" data-aos="zoom-in">
+  <h3>In Progress</h3> 
+  <a class="tr" href="student planner.html">
+    <p>Simple web app to organize tasks and schedules</p>
+    </a>
+
+    </div>
+</div>
+ 
+</section>
+
+<section>
+<h2>Skills</h2>
+<p>HTML.CSS.Javascript.GitHub</p>
+</section>
+
+
+<section id="Contacts" data-aos="fade-left">
+<h2>Contacts</h2>
+<p>Call:+213 554157267</p>
+<p>Wattsup:+256 704693148</p>
+<p>Email:johnsande@gmai.com</p>
+<p>Available for internships(including unpaid) and freelance work.</p>
+</section>
+<footer>
+<p>@2026 sande john</p>
+
+</footer>
+<script
+src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  durration: 1000,
+  once: true
+});
+</script>
+
+</body>
+</html>

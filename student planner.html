@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
+<title> Budget & Time Tracker(DEMD)</title>
+<link
+href="https://fonts.googleapics.com/css2?
+family=poppins:wght@300;500;600&
+display=swap" rel="stylesheet">
+<style>
+body{
+  margin: 0;
+  font-family: 'poppins',sans-serif;
+  background: #0f172a;
+  color: white;
+}
+header{
+  padding: 20px;
+  text-align: centre;
+  background: #020617;
+  font-size: 22px;
+}
+.container{
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+
+}
+.card{
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+}
+input, button{
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
+
+}
+button{
+  background: #22c55e;
+  cursor: ponter;
+
+}
+.item{
+  display: flex;
+  justify-content: space-between;
+  background: #334155;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+
+}
+.delet{
+  background: red;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+.total{
+  margin-top: 10px;
+  font-weight: bold;
+
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header>ADvanced Budget & Time Tracker</header>
+
+<div class="container">
+<!--BUDGET-->
+<div class="card">
+<h2>Budget Tracker</h2>
+<input id="desc" placeholder="Expense name">
+<input id="amount" type="number" placeholder="Amount">
+<button onclick="addExpense()">Add</button>
+
+<div id="list"></div>
+<div id="total" class="total"></div>
+</div>
+
+
+<!--TIME-->
+<div class="card">
+<h2>Time Tracker</h2>
+<input id="task" placeholder="Task name">
+<button onclick="startTimer()">Start</button>
+<button onclick="storpTimer()">stop</button>
+
+<p id="time">0 sec</p>
+<h3>History</h3>
+<div id="history"></div>
+
+</div>
+</div>
+
+<script>
+// LOCAL STORAGE LOAD
+let expenses=
+JSON.parse(localstorage.getltem("expense")) ; 
+let total=0; 
+
+//RENDER EXPENSES
+function render(){
+  let list=document.getElementByld("list");
+  list.innerHTML="";
+  total=0;
+
+expenses.forEach((exp, index) =>{
+  total+=exp.amount;
+
+  let div=document.createElement("div");
+  div.className="items";
+
+  div.innerHTML=`
+  <span>${exp.desc}-$${exp.amount}</span>
+  <span class="delete"
+  onclick="deleteExpense(${index})">X</span>`;
+  list.appendChild(div);
+});
+document.getElentByld("total").innerText="Total:$"+total;
+localStorage.setltem("expenses",JSON.stringify(expenses));}
+
+//ADD
+function addExpense(){
+  let desc=document.getElentByld("desc").value;
+  let amount=parseFloat(document.getElementById("amount").value);
+
+if(!desc|| !amount)return;
+expenses.push({desc,amount});
+render();
+
+document.getElementById("desc").value="";
+
+
+}
+//DELETE
+  function deleteExpense(index){
+  expense.splice(index, 1);
+  render();
+}
+//TIME
+let seconds=0;
+let interval;
+let currentTask="";
+
+function startTimer() {
+  if(interval)return;
+currentTask=document.getElementById("task").value || "Task";
+
+interval=setInterval(()=>{
+  seconds++;
+  document.getElementById("time").innerText=seconds+ "sec";
+}, 100);}
+
+function storpTimer() {
+  clearInterval(interval);
+  interval=null;
+let history=document.getElementById("history");
+
+let item=document.createElementById("div");
+item.className="item";
+item.innerHTML=<span>${currentTask} - ${seconds} sec</span>;
+
+history.appendChild(item);
+
+seconds=0;
+document.getElementById("time").innerText="0sec";
+}
+//INIT
+render();
+</script>
+</body>
+
+</html>
